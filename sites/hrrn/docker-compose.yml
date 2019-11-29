@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  hrrn:
+  app:
     build:
       context: .
       dockerfile: ./Dockerfile
@@ -14,7 +14,7 @@ services:
       LETSENCRYPT_HOST: hrrn.nmtechgroup.com
       LETSENCRYPT_EMAIL: me@wrparker.me
 
-    hrrn_db:
+    db:
     image: mysql:5.7
     restart: always
     environment:
