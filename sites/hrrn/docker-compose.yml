@@ -23,7 +23,7 @@ services:
       MYSQL_PASSWORD: wordpress
       MYSQL_RANDOM_ROOT_PASSWORD: '1'
     volumes:
-      - hrrn_db:/var/lib/mysql
+      - db:/var/lib/mysql
 networks:
   default:
     external:
