@@ -1,0 +1,6 @@
+*site/.*
+*site/.*
+sites/nginx_proxy/certs/*
+sites/nginx_proxy/conf.d/*
+sites/nginx_proxy/html/*
+sites/nginx_proxy/vhost.d/*
