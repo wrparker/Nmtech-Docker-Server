@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  wrparker.me:
+  hrrn:
     build:
       context: .
       dockerfile: ./Dockerfile
@@ -13,6 +13,17 @@ services:
       VIRTUAL_PORT: 80
       LETSENCRYPT_HOST: hrrn.nmtechgroup.com
       LETSENCRYPT_EMAIL: me@wrparker.me
+
+    hrrn_db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+      MYSQL_RANDOM_ROOT_PASSWORD: '1'
+    volumes:
+      - hrrn_db:/var/lib/mysql
 networks:
   default:
     external:
