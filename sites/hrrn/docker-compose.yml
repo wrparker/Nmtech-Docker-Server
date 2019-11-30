@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  app:
+  hrrn_app:
     image: php:apache
     volumes:
       - ./site:/var/www/html
@@ -12,7 +12,7 @@ services:
       LETSENCRYPT_HOST: hrrn.nmtechgroup.com
       LETSENCRYPT_EMAIL: me@wrparker.me
 
-  db:
+  hrrn_db:
     image: mysql:5.7
     restart: always
     environment:
