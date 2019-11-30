@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  rwop_app:
+    image: wordpress
+    volumes:
+      - ./site:/var/www/html
+    restart: always
+    environment:
+      VIRTUAL_HOST: rwop.org
+      VIRTUAL_PORT: 80
+      LETSENCRYPT_HOST: rwop.org
+      LETSENCRYPT_EMAIL: me@wrparker.me
+      HTTPS_METHOD: redirect
+
+  rwop_db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+      MYSQL_RANDOM_ROOT_PASSWORD: '1'
+    volumes:
+      - rwop_db:/var/lib/mysql
+
+volumes:
+  rwop_db:
+
+networks:
+  default:
+    external:
+      name: nginx-proxy
