@@ -13,15 +13,15 @@ services:
       LETSENCRYPT_EMAIL: me@wrparker.me
 
   db:
-  image: mysql:5.7
-  restart: always
-  environment:
-    MYSQL_DATABASE: wordpress
-    MYSQL_USER: wordpress
-    MYSQL_PASSWORD: wordpress
-    MYSQL_RANDOM_ROOT_PASSWORD: '1'
-  volumes:
-    - db:/var/lib/mysql
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+      MYSQL_RANDOM_ROOT_PASSWORD: '1'
+    volumes:
+      - db:/var/lib/mysql
 networks:
   default:
     external:
