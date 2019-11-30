@@ -23,3 +23,11 @@ systemctl restart docker
 cd /var/www/nginx-proxy && docker-compose up -d
 
 docker container ls
+
+# Need to install mysqli_close
+#need to do secure_mysql_install
+
+
+# Cheats:
+# full db backup: mysqldump --all-databases --single-transaction --quick --lock-tables=false > ~/full-backup-$(date +%F).sql
+# full file backup: cd /var/www && tar -cvf ~/full-backup-$(date +%F).tar.gz .
