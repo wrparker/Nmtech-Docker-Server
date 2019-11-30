@@ -12,21 +12,8 @@ services:
       LETSENCRYPT_HOST: tnfrw.org
       LETSENCRYPT_EMAIL: me@wrparker.me
 
-  tnfrw_db:
-    image: mysql:5.7
-    restart: always
-    environment:
-      MYSQL_DATABASE: wordpress
-      MYSQL_USER: wordpress
-      MYSQL_PASSWORD: wordpress
-      MYSQL_RANDOM_ROOT_PASSWORD: '1'
-    volumes:
-      - tnfrw_db:/var/lib/mysql
-
-volumes:
-  tnfrw_db:
-
 networks:
   default:
     external:
       name: nginx-proxy
+

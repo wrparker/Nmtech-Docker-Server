@@ -1,16 +1,19 @@
 version: '3'
 
 services:
-  sneekxy_app:
-    image: php:apache
+  jessethomason_app:
+    build:
+      dockerfile: ./Dockerfile
+      context: . 
     volumes:
       - ./site:/var/www/html
     restart: always
     environment:
-      VIRTUAL_HOST: sneekxy.nmtechgroup.com
+      VIRTUAL_HOST: jessethomason.com
       VIRTUAL_PORT: 80
-      LETSENCRYPT_HOST: sneekxy.nmtechgroup.com
+      LETSENCRYPT_HOST: jessethomason.com
       LETSENCRYPT_EMAIL: me@wrparker.me
+      HTTPS_METHOD: redirect
 
 networks:
   default:

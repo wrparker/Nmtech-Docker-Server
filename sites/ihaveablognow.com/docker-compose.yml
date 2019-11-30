@@ -1,19 +1,18 @@
 version: '3'
 
 services:
-  sneekxy_app:
-    image: php:apache
+  ihaveablognow_app:
+    image: wordpress
     volumes:
       - ./site:/var/www/html
     restart: always
     environment:
-      VIRTUAL_HOST: sneekxy.nmtechgroup.com
+      VIRTUAL_HOST: ihaveablognow.com,operationcognition.com
       VIRTUAL_PORT: 80
-      LETSENCRYPT_HOST: sneekxy.nmtechgroup.com
+      LETSENCRYPT_HOST: ihaveablognow.com,operationcognition.com
       LETSENCRYPT_EMAIL: me@wrparker.me
 
 networks:
   default:
     external:
       name: nginx-proxy
-
